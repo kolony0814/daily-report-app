@@ -1,0 +1,19 @@
+<form action="/complete" method="post">
+
+<p th:text="'日付：' + ${report.date}"></p>
+<p th:text="'作業内容：' + ${report.workContent}"></p>
+<p th:text="'進捗：' + ${report.progress}"></p>
+<p th:text="'成長点：' + ${report.growth}"></p>
+<p th:text="'反省点：' + ${report.reflection}"></p>
+<p th:text="'月次総評：' + ${report.summary}"></p>
+
+<!-- 値保持 -->
+<input type="hidden" name="date" th:value="${report.date}">
+<input type="hidden" name="workContent" th:value="${report.workContent}">
+<input type="hidden" name="progress" th:value="${report.progress}">
+<input type="hidden" name="growth" th:value="${report.growth}">
+<input type="hidden" name="reflection" th:value="${report.reflection}">
+<input type="hidden" name="summary" th:value="${report.summary}">
+
+<button type="submit">登録</button>
+</form>
