@@ -1,0 +1,30 @@
+<form action="/confirm" method="post">
+
+日付：
+<span th:text="${report.date}"></span>
+<input type="hidden" name="date" th:value="${report.date}">
+<br><br>
+
+作業内容<br>
+<textarea name="workContent"></textarea><br><br>
+
+進捗度<br>
+<select name="progress">
+<option>20</option><option>40</option>
+<option>60</option><option>80</option><option>100</option>
+</select><br><br>
+
+<div th:if="${isWeekend}">
+成長点<br>
+<textarea name="growth"></textarea><br>
+反省点<br>
+<textarea name="reflection"></textarea><br><br>
+</div>
+
+<div th:if="${isMonthEnd}">
+月次総評<br>
+<textarea name="summary"></textarea><br><br>
+</div>
+
+<button type="submit">確認</button>
+</form>
